@@ -17,7 +17,6 @@ body {
     animation: gradientMove 10s ease infinite;
 }
 
-/* Background animation */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
