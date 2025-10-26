@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Cost Predictor 💰</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="glass-card">
+            <h1>💡 Insurance Cost Predictor</h1>
+            <p class="subtitle">Predict your health insurance charges instantly</p>
+
+            <form action="/predict" method="post" class="form">
+
+                <div class="input-group">
+                    <label>👤 Age</label>
+                    <input type="number" name="age" placeholder="Enter your age" required>
+                </div>
+
+                <div class="input-group">
+                    <label>🚻 Sex</label>
+                    <select name="sex" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>⚖️ BMI</label>
+                    <input type="number" step="0.1" name="bmi" placeholder="Enter BMI" required>
+                </div>
+
+                <div class="input-group">
+                    <label>👶 Children</label>
+                    <input type="number" name="children" placeholder="Number of children" required>
+                </div>
+
+                <div class="input-group">
+                    <label>🚬 Smoker</label>
+                    <select name="smoker" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>🌍 Region</label>
+                    <select name="region" required>
+                        <option value="southeast">Southeast</option>
+                        <option value="southwest">Southwest</option>
+                        <option value="northeast">Northeast</option>
+                        <option value="northwest">Northwest</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">🚀 Predict</button>
+            </form>
+
+            {% if prediction_text %}
+            <div class="result-box">
+                <h2>{{ prediction_text }}</h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
