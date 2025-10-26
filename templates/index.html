@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Insurance Price Prediction</h1>
+        <form id="predictForm">
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="number" name="bmi" placeholder="BMI" required>
+            <input type="number" name="children" placeholder="Children" required>
+            <select name="smoker" required>
+                <option value="">Smoker?</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
